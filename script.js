@@ -26,7 +26,7 @@ const getQuote = async () => {
     if (data.quoteAuthor === "") {
       authorText.innerText = "unknown";
     }
-    if (data.quoteText.lenght > 50) {
+    if (data.quoteText.length > 50) {
       quoteText.classList.add("long-quote");
     } else {
       quoteText.classList.remove("long-quote");
@@ -35,6 +35,7 @@ const getQuote = async () => {
     quoteText.innerText = data.quoteText;
     loaded();
   } catch (err) {
+    console.log(err);
     loading();
   }
 };
